@@ -12,7 +12,7 @@ typedef struct s_list
     struct s_list *next;
 } t_list;
 
-int g_movements;
+//int g_movements;
 //indexing
 int *create_array(t_list **stack_a, int size);
 int *sort_array(int *arr, int size);

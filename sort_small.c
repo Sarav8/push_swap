@@ -61,5 +61,4 @@ void sort_5(t_list **stack_a, t_list **stack_b)
     sort_3(stack_a);
     push_a(stack_a, stack_b);
     push_a(stack_a, stack_b);
-
 }

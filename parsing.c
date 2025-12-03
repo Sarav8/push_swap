@@ -14,7 +14,7 @@ int has_duplicates(char **numbers, int count)
     while (i < count) 
     {
         num_i = ft_atol(numbers[i]);
-        int j = i + 1;
+        j = i + 1;
         while (j < count)
         {
             num_j = ft_atol(numbers[j]);

@@ -15,6 +15,7 @@ t_list *nodo_new(int num)
 void add_first(t_list **head, int num)
 {
     t_list *nodo;
+
     nodo = nodo_new(num);
     if (!nodo)
         return;
@@ -30,13 +31,11 @@ void add_last(t_list **head, int num)
     nodo = nodo_new(num);
     if(!nodo)
         return;
-
     if(*head == NULL)
     {
         *head = nodo;
         return;
     }
-
     temp = *head;
     while(temp-> next != NULL)
         temp = temp -> next;

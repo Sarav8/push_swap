@@ -14,8 +14,9 @@ void rotate_a(t_list **stack_a)
     while (last->next)
     last = last->next;
     last->next = first;
-    write(1, "ra\n", 3);
     //g_movements++;
+    write(1, "ra\n", 3);
+    
 }
 
 void rotate_b(t_list **stack_b)

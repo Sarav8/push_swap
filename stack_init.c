@@ -52,3 +52,28 @@ int fill_stack(char *arg, t_list **stack_a)
     ft_free_split(numbers);
     return (0);
 }
+
+long long	ft_atol(const char *nptr)
+{
+	int	i;
+	long long	sign;
+	long long	result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result = result * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (sign * result);
+}

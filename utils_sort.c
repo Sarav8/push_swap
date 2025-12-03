@@ -32,7 +32,7 @@ int get_position(t_list *stack, int n)
         i++;
         stack = stack->next;
     }
-    return -1; 
+    return (-1); 
 }
 
 int stack_size(t_list *stack)
@@ -43,7 +43,7 @@ int stack_size(t_list *stack)
         count++;
         stack = stack->next;
     }
-    return count;
+    return (count);
 }
 
 void bring_to_top(t_list **stack, int pos)
@@ -65,5 +65,5 @@ int is_sorted(t_list *stack)
             return 0;
         stack = stack->next;
     }
-    return 1;
+    return (1);
 }

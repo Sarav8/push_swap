@@ -18,10 +18,8 @@ void sort_large(t_list **stack_a, t_list **stack_b, int size)
 void move_to_b(t_list **stack_a, t_list **stack_b, int chunk_size)
 {
     int max_index;
-    int size;
 
     max_index = chunk_size - 1;
-    size = stack_size(*stack_a);
     while (*stack_a)
     {
         if ((*stack_a)->index <= max_index)
