@@ -15,16 +15,6 @@ void sort_large(t_list **stack_a, t_list **stack_b, int size)
 }
 
 
-void push_chunk(t_list **stack_a, t_list **stack_b, int max_index)
-{
-    while ((*stack_a) && (*stack_a)->index <= max_index)
-    {
-        push_b(stack_a, stack_b);
-        if ((*stack_b)->index < max_index / 2)
-            rotate_b(stack_b);
-    }
-}
-
 void move_to_b(t_list **stack_a, t_list **stack_b, int chunk_size)
 {
     int max_index;

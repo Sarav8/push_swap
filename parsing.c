@@ -1,14 +1,5 @@
 #include "push_swap.h"
 
-
-/*int check_int_range(char *str)
-{
-    long num = ft_atol(str);
-    if (num < -2147483648 || num > 2147483647)
-        return 1; 
-    return 0;      
-}*/
-
 int has_duplicates(char **numbers, int count)
 {
     int i;
@@ -36,7 +27,6 @@ int has_duplicates(char **numbers, int count)
     return 0;
 }
 
-
 int num_valid(char *str)
 {
     int i;
@@ -62,4 +52,38 @@ int check_argc(int argc)
         return(1);
     }
     return(0);
+}
+int parse_args(int argc, char **argv, t_list **stack_a)
+{
+    int i;
+
+    i = 1;
+    while (i < argc)
+    {
+        if (fill_stack(argv[i], stack_a))
+            return (1);
+        i++;
+    }
+    if (has_duplicates_stack(*stack_a))
+        return (1);
+    return (0);
+}
+
+int has_duplicates_stack(t_list *stack)
+{
+    t_list *a = stack;
+    t_list *b;
+
+    while (a)
+    {
+        b = a->next;
+        while (b)
+        {
+            if (a->num == b->num)
+                return (1);
+            b = b->next;
+        }
+        a = a->next;
+    }
+    return (0);
 }

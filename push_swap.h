@@ -23,14 +23,14 @@ int find_max_position(t_list *stack_b);
 t_list *nodo_new(int num);
 void add_last(t_list **stack, int num);
 void free_stack(t_list **stack);
-int fill_stack_2argc(char *arg, t_list **stack_a);
-int fill_stack_more2argc(int argc, char **argv, t_list **stack_a);
+int fill_stack(char *arg, t_list **stack_a);
 
 //parsing
-//int check_int_range(char *str);
 int has_duplicates(char **numbers, int count);
 int num_valid(char *str);
 int check_argc(int argc);
+int parse_args(int argc, char **argv, t_list **stack_a);
+int has_duplicates_stack(t_list *stack);
 
 //libft
 long long ft_atol(const char *nptr);       
@@ -59,7 +59,6 @@ void sort_5(t_list **stack_a, t_list **stack_b);
 
 //large
 void sort_large(t_list **stack_a, t_list **stack_b, int size);
-void push_chunk(t_list **stack_a, t_list **stack_b, int max_index);
 void move_to_b(t_list **stack_a, t_list **stack_b, int chunk_size);
 void move_to_a(t_list **stack_a, t_list **stack_b);
 

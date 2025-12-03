@@ -28,27 +28,19 @@ int main(int argc, char **argv)
     t_list *stack_b;
     int size;
     
-    g_movements = 0;
+    //g_movements = 0;
     stack_a = NULL;
     stack_b = NULL;
     if (argc == 1)
         return (0);
-    if (argc == 2)
-    {
-        if (fill_stack_2argc(argv[1], &stack_a))
-            return (write(2, "Error\n", 6), 1);
-    }
-    else
-    {
-        if (fill_stack_more2argc(argc, argv, &stack_a))
-            return (write(2, "Error\n", 6), 1);
-    }
+    if (parse_args(argc, argv, &stack_a))
+        return (write(2, "Error\n", 6), 1);
     if (is_sorted(stack_a))
         return (free_stack(&stack_a), 0);
     size = stack_size(stack_a);
     sort_controller(&stack_a, &stack_b, size);
-    printf("Total movimientos: %d\n", g_movements);
-    print_stack(stack_a, "A");
+    //printf("Total movimientos: %d\n", g_movements);
+    //print_stack(stack_a, "A");
     free_stack(&stack_a);
     free_stack(&stack_b);
     return (0);
